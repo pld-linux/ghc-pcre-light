@@ -2,7 +2,7 @@
 Summary:	A library for Perl 5 compatible regular expressions
 Name:		ghc-%{pkgname}
 Version:	0.4
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
@@ -11,7 +11,7 @@ URL:		http://hackage.haskell.org/package/pcre-light/
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	pcre-devel
 BuildRequires:	rpmbuild(macros) >= 1.608
-%requires_releq	ghc
+%requires_eq	ghc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
