@@ -2,7 +2,7 @@
 Summary:	A library for Perl 5 compatible regular expressions
 Name:		ghc-%{pkgname}
 Version:	0.4
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
