@@ -7,7 +7,7 @@ Summary:	A library for Perl 5 compatible regular expressions
 Summary(pl.UTF-8):	Biblioteka wyrażeń regularnych zgodnych z Perlem 5
 Name:		ghc-%{pkgname}
 Version:	0.4
-Release:	4
+Release:	5
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/pcre-light
@@ -26,6 +26,7 @@ BuildRequires:	ghc-bytestring-prof >= 0.9
 %endif
 BuildRequires:	pcre-devel
 BuildRequires:	rpmbuild(macros) >= 1.608
+Requires(post,postun):	/usr/bin/ghc-pkg
 %requires_eq	ghc
 Requires:	ghc-base >= 3
 Requires:	ghc-base <= 5
@@ -56,8 +57,8 @@ Requires:	ghc-base-prof <= 5
 Requires:	ghc-bytestring-prof >= 0.9
 
 %description prof
-Profiling %{pkgname} library for GHC. Should be installed when
-GHC's profiling subsystem is needed.
+Profiling %{pkgname} library for GHC. Should be installed when GHC's
+profiling subsystem is needed.
 
 %description prof -l pl.UTF-8
 Biblioteka profilująca %{pkgname} dla GHC. Powinna być zainstalowana
