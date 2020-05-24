@@ -6,13 +6,13 @@
 Summary:	A library for Perl 5 compatible regular expressions
 Summary(pl.UTF-8):	Biblioteka wyrażeń regularnych zgodnych z Perlem 5
 Name:		ghc-%{pkgname}
-Version:	0.4
-Release:	5
+Version:	0.4.1.0
+Release:	1
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/pcre-light
 Source0:	http://hackage.haskell.org/package/%{pkgname}-%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	4907d8d239d3c41f06855faee340d052
+# Source0-md5:	b2998e2841561c04d93cea443aae6ad1
 URL:		http://hackage.haskell.org/package/pcre-light
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-base >= 3
@@ -114,22 +114,25 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE TODO
+%doc LICENSE README.md
 %{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/HSpcre-light-%{version}.o
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSpcre-light-%{version}.a
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSpcre-light-%{version}-*.so
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSpcre-light-%{version}-*.a
+%exclude %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSpcre-light-%{version}-*_p.a
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Regex
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Regex/PCRE
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Regex/PCRE/Light.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Regex/PCRE/Light.dyn_hi
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Regex/PCRE/Light
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Regex/PCRE/Light/*.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Regex/PCRE/Light/*.dyn_hi
 
 %if %{with prof}
 %files prof
 %defattr(644,root,root,755)
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSpcre-light-%{version}_p.a
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSpcre-light-%{version}-*_p.a
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Regex/PCRE/Light.p_hi
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Text/Regex/PCRE/Light/*.p_hi
 %endif
