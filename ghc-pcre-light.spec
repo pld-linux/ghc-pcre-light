@@ -7,7 +7,7 @@ Summary:	A library for Perl 5 compatible regular expressions
 Summary(pl.UTF-8):	Biblioteka wyrażeń regularnych zgodnych z Perlem 5
 Name:		ghc-%{pkgname}
 Version:	0.4.1.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/pcre-light
